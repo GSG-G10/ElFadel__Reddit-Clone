@@ -7,9 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "test": "test jest",
-    "dev": "nodemon server/index.js"
+    "start": "set NODE_ENV=production& node server/index.js",
+    "test": "set NODE_ENV=test& test jest",
+    "dev": "set NODE_ENV=development& nodemon server/index.js"
   },
   "repository": {
     "type": "git",
