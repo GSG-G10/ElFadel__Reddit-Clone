@@ -7,7 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/index.js",
+    "test": "test jest",
+    "dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,8 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
     "jest": "^27.0.6",
     "nodemon": "^2.0.12"
   }
