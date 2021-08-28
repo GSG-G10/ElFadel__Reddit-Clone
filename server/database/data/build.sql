@@ -9,7 +9,7 @@ CREATE TABLE users (
 CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     title VARCHAR(225) NOT NULL,
-    content VARCHAR(225),
+    content TEXT NOT NULL ,
     user_id INTEGER  REFERENCES users(id),
     votes INTEGER NOT NULL DEFAULT 1,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -17,7 +17,7 @@ CREATE TABLE posts (
 );
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
-    content VARCHAR(225) NOT NULL,
+    content TEXT NOT NULL,
     post_id INTEGER REFERENCES posts(id),
     user_id INTEGER REFERENCES users(id),
     votes INTEGER NOT NULL DEFAULT 1,
