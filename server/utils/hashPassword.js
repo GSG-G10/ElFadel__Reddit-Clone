@@ -1,7 +1,3 @@
-const { hash, genSalt } = require('bcryptjs');
+const { hash } = require('bcryptjs');
 
-module.exports = (password, callback) => {
-  genSalt(10, (err, salt) => {
-    hash(password, salt, callback);
-  });
-};
+module.exports = (password, callback) => hash(password, 10, callback);
