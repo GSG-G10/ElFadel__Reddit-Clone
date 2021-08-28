@@ -21,7 +21,7 @@ switch (NODE_ENV) {
     throw new Error('There\'s no environment');
 }
 const options = {
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
+  connectionString: dbUrl,
+  ssl: false,
 };
 module.exports = new Pool(options);
