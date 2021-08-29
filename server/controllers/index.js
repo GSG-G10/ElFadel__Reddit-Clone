@@ -1,4 +1,6 @@
-const { loginController, signUpController, logoutController } = require('./auth');
+const {
+  loginController, signUpController, logoutController, isAuth,
+} = require('./auth');
 const getSubmit = require('./getSubmit');
 const postSubmit = require('./postSubmit');
 
@@ -8,4 +10,5 @@ module.exports = {
   logoutController,
   getSubmit,
   postSubmit,
+  isAuth,
 };
