@@ -23,7 +23,7 @@ module.exports = (req, res) => {
           });
         }
         return res
-          .cookie('access_token', token, {
+          .cookie('token', token, {
             httpOnly: true,
           })
           .redirect('/');
