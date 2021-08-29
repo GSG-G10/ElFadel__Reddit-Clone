@@ -1,4 +1,4 @@
-const { addPost } = require('../database/queries');
+const { addPost } = require('../../database/queries');
 
 module.exports = (req, res) => {
   // -->getUserId
