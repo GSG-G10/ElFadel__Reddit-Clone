@@ -1,6 +1,8 @@
 const router = require('express').Router();
-const { getSubmit, postSubmit, isAuth } = require('../controllers');
+const {
+  getSubmit, postSubmit, isAuth, getUserData,
+} = require('../controllers');
 
 router.get('/submit', isAuth, getSubmit);
-router.post('/submit', postSubmit);
+router.post('/submit', getUserData, postSubmit);
 module.exports = router;
