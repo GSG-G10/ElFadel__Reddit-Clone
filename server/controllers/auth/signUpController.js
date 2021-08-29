@@ -1,5 +1,5 @@
-const { signUpQueries } = require('../database/queries');
-const { signUpValidate, hashPassword, buildToken } = require('../utils');
+const { signUpQueries } = require('../../database/queries');
+const { signUpValidate, hashPassword, buildToken } = require('../../utils');
 
 module.exports = (req, res) => {
   const { password, email, name } = req.body;
@@ -15,7 +15,7 @@ module.exports = (req, res) => {
     // store database
     signUpQueries(name, hash, email).then(() => {
       // build token
-      buildToken({ name, email }, process.env.secretKey, (errJWT, token) => {
+      buildToken({ name, email }, process.env.SECRET_KEY, (errJWT, token) => {
         if (errJWT) {
           return res.status(401).json({
             status: 401,
