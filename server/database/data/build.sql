@@ -5,7 +5,7 @@ CREATE TABLE users (
     name VARCHAR(225) UNIQUE NOT NULL,
     password VARCHAR(225) NOT NULL,
     email VARCHAR(225) UNIQUE NOT NULL,
-    image TEXT DEFAULT 'https://pics.me.me/thumb_i-edited-the-default-reddit-profile-picture-i-hope-you-68963409.png',
+    image TEXT DEFAULT 'https://pics.me.me/thumb_i-edited-the-default-reddit-profile-picture-i-hope-you-68963409.png'
 );
 CREATE TABLE posts (
     id SERIAL PRIMARY KEY,

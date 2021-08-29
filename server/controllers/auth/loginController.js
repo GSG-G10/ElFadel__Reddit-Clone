@@ -13,12 +13,13 @@ module.exports = (req, res) => {
   }) => {
     if (rows[0]) {
       const {
+        id,
         name,
         password: hashPassword,
       } = rows[0];
       comparePassword(password, hashPassword, (errCompare, isMatch) => {
         if (isMatch) {
-          buildToken({ name, email }, process.env.SECRET_KEY, (err, token) => {
+          buildToken({ id, name, email }, process.env.SECRET_KEY, (err, token) => {
             res.cookie('token', token);
             res.status(302).redirect('back');
           });
