@@ -1,8 +1,8 @@
 const {
   loginController, signUpController, logoutController, isAuth,
 } = require('./auth');
-const getSubmit = require('./getSubmit');
-const postSubmit = require('./postSubmit');
+const { getSubmit, postSubmit } = require('./submitCont');
+const { deletePost } = require('./post');
 const { getUserData } = require('./utils');
 
 module.exports = {
@@ -13,4 +13,5 @@ module.exports = {
   postSubmit,
   isAuth,
   getUserData,
+  deletePost,
 };

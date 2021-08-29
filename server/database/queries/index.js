@@ -1,8 +1,9 @@
 const { loginQuery, signUpQuery } = require('./relateAuth');
-const { addPost } = require('./relatePost');
+const { addPost, deletePost } = require('./relatePost');
 
 module.exports = {
   signUpQuery,
   loginQuery,
   addPost,
+  deletePost,
 };
