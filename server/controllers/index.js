@@ -4,6 +4,9 @@ const {
 const { getSubmit, postSubmit } = require('./submitCont');
 const { deletePost } = require('./post');
 const { getUserData } = require('./utils');
+const {
+  addComment, deleteComment, updateComment, getComments,
+} = require('./comments');
 
 module.exports = {
   signUpController,
@@ -14,4 +17,8 @@ module.exports = {
   isAuth,
   getUserData,
   deletePost,
+  addComment,
+  deleteComment,
+  updateComment,
+  getComments,
 };
