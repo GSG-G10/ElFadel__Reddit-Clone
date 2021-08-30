@@ -31,7 +31,7 @@ module.exports = (req, res) => {
       });
     }).catch(() => {
       // database error
-      res.cookie('message', 'something wrong please try again');
+      res.cookie('message', 'hmmm This email or your Name is exist please change it ');
       return res.status(400).redirect('/signUp');
     });
   });
