@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { deletePost, getUserData } = require('../controllers');
+const { deletePost, isAuth } = require('../controllers');
 
-router.delete('/:id', getUserData, deletePost);
+router.delete('/:id', isAuth, deletePost);
 module.exports = router;

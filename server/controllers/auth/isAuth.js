@@ -9,6 +9,8 @@ module.exports = (req, res, next) => {
       if (err) {
         return next(err);
       }
+      const decoded = token;
+      req.dataUser = decoded;
       return next();
     });
   } else {
