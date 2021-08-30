@@ -108,6 +108,7 @@ input[type="submit"] {
     color: #fff;
     height: 40px;
     padding: 0 16px;
+    cursor: pointer;
 }
 .signUpForm{
     display: flex;
@@ -129,5 +130,12 @@ input[type="submit"]:hover{
     text-decoration: none;
     color: #0079d3;
     margin-left: 5px;
+}
+div#error {
+    background: red;
+    color: #f3f3f3;
+    padding: 1rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
 }
     

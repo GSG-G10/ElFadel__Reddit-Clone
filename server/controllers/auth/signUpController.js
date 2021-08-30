@@ -1,7 +1,11 @@
+const { join } = require('path');
 const { signUpQuery } = require('../../database/queries');
 const { signUpValidate, hashPassword, buildToken } = require('../../utils');
 
 module.exports = (req, res) => {
+  if (req.method === 'GET') {
+    return res.status(200).sendFile(join(__dirname, '../../../public/views/signUp.html'));
+  }
   const { password, email, name } = req.body;
   const { error } = signUpValidate.validate(req.body);
   if (error) {

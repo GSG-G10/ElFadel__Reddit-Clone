@@ -1,9 +1,13 @@
+const { join } = require('path');
 const {
   loginQuery,
 } = require('../../database/queries');
 const { comparePassword, buildToken } = require('../../utils');
 
 module.exports = (req, res) => {
+  if (req.method === 'GET') {
+    return res.status(200).sendFile(join(__dirname, '../../../public/views/login.html'));
+  }
   const {
     email,
     password,
@@ -21,23 +25,21 @@ module.exports = (req, res) => {
         if (isMatch) {
           buildToken({ id, name, email }, process.env.SECRET_KEY, (err, token) => {
             res.cookie('token', token);
-            res.status(302).redirect('back');
+            res.status(200).redirect('/');
           });
         } else {
-          res.status(401).json({
-            message: 'Wrong password',
-          });
+          res.cookie('message', 'Wrong password please try again ');
+          res.status(400).redirect('/login');
         }
       });
     } else {
-      res.status(401).json({
-        message: 'Wrong email || you don\'t have email',
-      });
+      res.cookie('message', 'email isn\'t exist');
+      res.status(400).redirect('/login');
     }
   })
     .catch(() => {
       // query
-      res.cookie('sth problem, please try again :>');
+      res.cookie('message', 'sth problem please try again ');
       res.redirect('/login');
     });
 };
