@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
       if (err) {
         return next(err);
       }
-      const decoded = jwt.decode(token);
+      const decoded = token;
       req.dataUser = decoded;
       return next();
     });

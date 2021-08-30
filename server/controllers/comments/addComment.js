@@ -6,6 +6,7 @@ module.exports = (req, res, next) => {
   //   addComment
   addComment(comment, idPost, userId)
     .then(() => {
+      console.log(userId);
       getComment(idPost)
         .then((comments) => {
           res.status(200).json({ comments });
@@ -14,5 +15,5 @@ module.exports = (req, res, next) => {
           res.status(500).json({ err });
         });
     })
-    .catch((err) => console.log('lkjhv'));
+    .catch((err) => console.log(err));
 };

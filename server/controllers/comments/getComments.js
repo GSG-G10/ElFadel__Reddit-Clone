@@ -1,10 +1,10 @@
 const { getComment } = require('../../database/queries');
 /// :userName/comments/:idPost
-module.exports = (req, res) => {
+module.exports = (req, res, next) => {
   const { idPost } = req.params;
-  getComment(idPost).then((data) => {
-    console.log(data);
-  }).catch((err) => {
-    console.log(err);
-  });
+  getComment(idPost).then(({ rows }) => {
+    res.status(200).json({
+      comments: rows,
+    });
+  }).catch((err) => next(err));
 };
