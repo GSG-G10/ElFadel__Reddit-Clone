@@ -9,10 +9,8 @@ module.exports = (req, res) => {
   const { password, email, name } = req.body;
   const { error } = signUpValidate.validate(req.body);
   if (error) {
-    return res.status(400).json({
-      status: 400,
-      error: error.details[0].message,
-    });
+    res.cookie('message', error.details[0].message);
+    return res.status(400).redirect('/signUp');
   }
   // hash password
   hashPassword(password, (err, hash) => {
@@ -22,10 +20,8 @@ module.exports = (req, res) => {
       // build token
       buildToken({ id, name, email }, process.env.SECRET_KEY, (errJWT, token) => {
         if (errJWT) {
-          return res.status(401).json({
-            status: 401,
-            error: 'UNAUTHORIZED',
-          });
+          res.cookie('message', 'something wrong please try again');
+          return res.status(400).redirect('/signUp');
         }
         return res
           .cookie('token', token, {
@@ -33,9 +29,10 @@ module.exports = (req, res) => {
           })
           .redirect('/');
       });
-    }).catch((errorDatabaseConnection) => {
+    }).catch(() => {
       // database error
-      console.log(errorDatabaseConnection);
+      res.cookie('message', 'something wrong please try again');
+      return res.status(400).redirect('/signUp');
     });
   });
 };

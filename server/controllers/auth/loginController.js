@@ -2,7 +2,7 @@ const { join } = require('path');
 const {
   loginQuery,
 } = require('../../database/queries');
-const { comparePassword, buildToken } = require('../../utils');
+const { comparePassword, buildToken, signInValidate } = require('../../utils');
 
 module.exports = (req, res) => {
   if (req.method === 'GET') {
@@ -21,6 +21,11 @@ module.exports = (req, res) => {
         name,
         password: hashPassword,
       } = rows[0];
+      const { error } = signInValidate(email, password);
+      if (error) {
+        res.cookie('message', error.details[0].message);
+        return res.status(400);
+      }
       comparePassword(password, hashPassword, (errCompare, isMatch) => {
         if (isMatch) {
           buildToken({ id, name, email }, process.env.SECRET_KEY, (err, token) => {
