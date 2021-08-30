@@ -12,6 +12,7 @@ const {
   getComment,
   updateComment,
 } = require('./relateComments');
+const getUser = require('./relateUser');
 
 module.exports = {
   signUpQuery,
@@ -22,4 +23,5 @@ module.exports = {
   deleteComment,
   getComment,
   updateComment,
+  getUser,
 };
