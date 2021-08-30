@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reddit.com: Join the worldwide conversation</title>
+    <link rel="stylesheet" href="../css/sign.css">
+</head>
+<body>
+    <div class="signUp">
+       
+         <div class="sign-side-bg">
+             <img src="https://www.redditstatic.com/accountmanager/bbb584033aa89e39bad69436c504c9bd.png" alt="sign background">
+         </div>
+        <div class="container">
+             <div id="error"></div>
+           <h1 class="primary-header">Sign up</h1>
+           <p class="para">By continuing, you agree to our User Agreement and Privacy Policy.</p>
+           <div class="sign-with-google">
+               Continue with Google
+           </div>
+           <p class="or">OR</p>
+           <form action="/signUp" method="POST" class="signUpForm">
+              <input type="text" name="name" placeholder="Username">
+              <input type="email" name="email" placeholder="Email">
+              <input type="password" name="password" placeholder="Password">
+              <input type="submit" value="Sign up">
+            </form>
+            <p class="login">Already a redditor?<a href="/login" id="link">LOG IN</a></p>
+        </div>
+    </div>
+    <script src="../scripts/handleError.js"></script>
+</body>
+</html>
