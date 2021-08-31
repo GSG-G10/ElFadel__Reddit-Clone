@@ -2,7 +2,7 @@ const {
   loginController, signUpController, logoutController, isAuth,
 } = require('./auth');
 const { getSubmit, postSubmit } = require('./submitCont');
-const { deletePost } = require('./post');
+const { deletePost, getPosts } = require('./post');
 const {
   addComment, deleteComment, updateComment, getComments,
 } = require('./comments');
@@ -21,4 +21,5 @@ module.exports = {
   updateComment,
   getComments,
   profile,
+  getPosts,
 };
