@@ -8,8 +8,7 @@ workflow_dispatch:
   testing:
      runs-on: ubuntu-latest
      env:
-       - name: NODE_ENV
-        value: test
+        NODE_ENV: test
    steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -20,8 +19,7 @@ workflow_dispatch:
           script:
             - npm test
           env:
-            - name: NODE_ENV  
-              value: test
+             NODE_ENV: test 
 
 
 
