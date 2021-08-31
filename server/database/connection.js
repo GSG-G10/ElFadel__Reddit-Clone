@@ -1,3 +1,4 @@
+require('env2')('./config.env');
 const {
   Pool,
 } = require('pg');
