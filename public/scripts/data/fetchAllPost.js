@@ -3,5 +3,11 @@ fetch('/post/allPost', {
   method: 'GET',
 })
   .then((response) => response.json())
-  .then((res) => console.log('response', res))
-  .catch((err) => console.log(err));
+  .then(({ rows }) => {
+    rows.forEach(({
+      content, created_at: time, id, image, name, title, user_id, votes,
+    }) => {
+      // userImage, userName, time, titlePost, contentPost, numberComments, votes
+      cardPost(image, name, time, title, content, 0, votes, votes);
+    });
+  });
