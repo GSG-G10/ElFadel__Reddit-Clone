@@ -5,10 +5,14 @@ on:
     branches: [ test ]
 
 jobs:
-  build:
-
+  display:
+    name: Display
     runs-on: ubuntu-latest
-
+    env:
+      - NODE_ENV=test
+      - CI=true
+  build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [12.x]
