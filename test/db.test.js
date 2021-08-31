@@ -26,11 +26,11 @@ test('test signUpQuery & loginQuery  query', () => {
   });
 });
 
-test('test addPost query', () => {
-  addPost('Good Morning', 'Hello People', 1, 'f').then(({ rows }) => {
-    expect(rows[0].title).toBe('Good Morning');
-    expect(rows[0].content).toBe('Hello People');
-  });
-});
+// test('test addPost query', () => {
+//   addPost('Good Morning', 'Hello People', 1, 'f').then(({ rows }) => {
+//     expect(rows[0].title).toBe('Good Morning');
+//     expect(rows[0].content).toBe('Hello People');
+//   });
+// });
 
 afterAll(() => connection.end());
