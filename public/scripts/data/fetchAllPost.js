@@ -5,9 +5,8 @@ fetch('/post/allPost', {
   .then((response) => response.json())
   .then(({ rows }) => {
     rows.forEach(({
-      content, created_at: time, id, image, name, title, user_id, votes,
+      content, created_at: time, id, image, name, title, votes, number_comments,
     }) => {
-      // userImage, userName, time, titlePost, contentPost, numberComments, votes
-      cardPost(image, name, time, title, content, 0, votes, votes);
+      cardPost(image, name, time, title, content, number_comments, votes, votes, id);
     });
   });

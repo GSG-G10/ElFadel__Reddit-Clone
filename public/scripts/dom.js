@@ -1,6 +1,7 @@
 const containerPosts = document.getElementsByClassName('reddit__public__content');
-const cardPost = (userImage, userName, time, titlePost, contentPost, numberComments, votes) => {
+const cardPost = (userImage, userName, time, titlePost, contentPost, numberComments, votes, id) => {
   const postElement = document.createElement('div');
+  postElement.setAttribute('id', `${id}`);
   postElement.classList.add('reddit__public__content__post');
   const headerPost = document.createElement('div');
   headerPost.classList.add('reddit__public__content__post__header');
@@ -14,8 +15,10 @@ const cardPost = (userImage, userName, time, titlePost, contentPost, numberComme
   userInfo.classList.add('reddit__public__content__post__header__user__info');
   const userNameElement = document.createElement('h3');
   const userNameLink = document.createElement('a');//
+  userNameLink.textContent = userName;
   userNameLink.setAttribute('href', `/user/${userName}`);
   userNameLink.textContent = userName;
+  userNameElement.appendChild(userNameLink);
   const userTime = document.createElement('h5');
   userTime.classList.add('time');
   userTime.textContent = `${timeAgo(time)}hours ago`;
@@ -44,7 +47,6 @@ const cardPost = (userImage, userName, time, titlePost, contentPost, numberComme
   deletePost.id = 'delete';
   deletePost.innerHTML = '<i class="fas fa-trash"></i>Delete';
   user.appendChild(userImageElement);
-  userNameLink.appendChild(userNameElement);
   userInfo.appendChild(userNameElement);
   userInfo.appendChild(userTime);
   user.appendChild(userInfo);
