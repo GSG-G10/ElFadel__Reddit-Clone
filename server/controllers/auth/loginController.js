@@ -6,7 +6,7 @@ const { comparePassword, buildToken, signInValidate } = require('../../utils');
 
 module.exports = (req, res) => {
   if (req.method === 'GET') {
-    return res.status(200).sendFile(join(__dirname, '../../../public/views/login.html'));
+    return res.status(302).sendFile(join(__dirname, '../../../public/views/login.html'));
   }
   const {
     email,
