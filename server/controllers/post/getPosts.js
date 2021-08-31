@@ -1,4 +1,4 @@
-const { getAllPost } = require('../../database/queries');
+const { getAllPost, numberComments } = require('../../database/queries');
 
 module.exports = (req, res, next) => {
   getAllPost()
