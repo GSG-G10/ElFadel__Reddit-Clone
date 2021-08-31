@@ -6,7 +6,7 @@ const { deletePost, getPosts } = require('./post');
 const {
   addComment, deleteComment, updateComment, getComments,
 } = require('./comments');
-const profile = require('./profileController');
+const { profilePage, profileInfo } = require('./profile');
 
 module.exports = {
   signUpController,
@@ -20,6 +20,7 @@ module.exports = {
   deleteComment,
   updateComment,
   getComments,
-  profile,
+  profilePage,
+  profileInfo,
   getPosts,
 };
