@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { signUpController, loginController, logoutController } = require('../controllers');
+const {
+  signUpController, loginController, logoutController, isAuth,
+} = require('../controllers');
 
 router.get('/signup', signUpController);
 router.get('/login', loginController);
