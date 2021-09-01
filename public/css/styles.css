@@ -432,4 +432,8 @@ background: #9e9e9e5e;
 .hidden{
     display: none;
 }
+a#user-details{
+    display: flex;
+    align-items: center;
+}
 

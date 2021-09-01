@@ -92,11 +92,11 @@
             </nav>
             <div class="account-details">
                 <button class="btn btn-primary">Free</button>
-                <a class="user-details" href="/">
+                <a id="user-details" href="/">
                     <div class="avater"><img
                             src="https://pics.me.me/thumb_i-edited-the-default-reddit-profile-picture-i-hope-you-68963409.png">
                     </div>
-                    <h3 class="user-name">Elham Fadel</h3>
+                    <h3 id="user-name">Elham Fadel</h3>
                 </a>
             </div>
         </div>
@@ -106,48 +106,51 @@
     <!-- ========================== body ================================== -->
     <main class="main-reddit">
         <div class="container">
-        <div class="left-side reddit__public">
-            <div class="reddit__public__content">
-               <!-- postes -->
+            <div class="left-side reddit__public">
+                <div class="reddit__public__content">
+                    <!-- postes -->
+                </div>
             </div>
-            </div>
-           
-        <div class="right-side reddit__setting ">
-            <div class="personal-card">
-                <div class="personal-card__header">
-                    <div class="avater">
-                        <img src="https://pics.me.me/thumb_i-edited-the-default-reddit-profile-picture-i-hope-you-68963409.png">
+
+            <div class="right-side reddit__setting ">
+                <div class="personal-card">
+                    <div class="personal-card__header">
+                        <div class="avater">
+                            <img
+                                src="https://pics.me.me/thumb_i-edited-the-default-reddit-profile-picture-i-hope-you-68963409.png">
+                        </div>
+                        <div class="user-name">
+                            <h3>Elham Fadel</h3>
+                            <p>@elhamfadel</p>
+                        </div>
                     </div>
-                    <div class="user-name">
-                        <h3>Elham Fadel</h3>
-                        <p>@elhamfadel</p>
+                    <div class="personal-card__body">
+                        <div class="personal-card__body__item">
+                            <div class="personal-card__body__item__icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="personal-card__body__item__content">
+                                <h3>Friends</h3>
+                                <p class="friend">0</p>
+                            </div>
+                            <div class="personal-card__body__item__add">
+                                <button class="btn btn-primary">
+                                    <a href="/submit">Add New Post</a>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="personal-card__body">
-                    <div class="personal-card__body__item">
-                        <div class="personal-card__body__item__icon">
-                            <i class="fas fa-user-friends"></i>
-                        </div>
-                        <div class="personal-card__body__item__content">
-                            <h3>Friends</h3>
-                            <p class="friend">0</p>
-                        </div>
-                        <div class="personal-card__body__item__add">
-                            <button class="btn btn-primary">Add New Post</button>
-                        </div>
-                    </div>
             </div>
         </div>
-        </div>
-    </div>
     </main>
     <!-- ========================== /body ================================== -->
-    <script src="../scripts/data/handleActive.js" ></script>
+    <script src="../scripts/data/handleActive.js"></script>
     <script src="../scripts/data/fetchAllPostUser.js"></script>
-   <script src="../scripts/utils.js"> </script>
     <script src="../scripts/dom.js"></script>
-   
-   
+    <script src="../scripts/utils.js"> </script>
+
+
 
 </body>
 

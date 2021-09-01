@@ -5,10 +5,7 @@ const inputPost = document.getElementById('post');
 const upvote = document.getElementById('upvote');
 const profileImage = document.getElementById('profile-image');
 const userName = document.getElementById('user-name');
-
-inputPost.onfocus = () => {
-  window.location.href = '/submit';
-};
+const userProfile = document.getElementById('user-details');
 
 // card post
 const cardPost = (userImage, userName, time, titlePost, contentPost, numberComments, votes, id) => {
@@ -82,10 +79,14 @@ const cardPost = (userImage, userName, time, titlePost, contentPost, numberComme
 // hide and show element according if  user auth
 checkUser((isAuth) => {
   if (isAuth) {
-    // remove class hidden
-
     helperBar[0].classList.remove('hidden');
     logSign[0].classList.add('hidden');
+    userProfile.setAttribute('href', `/user/${isAuth.user.name}`);
     userName.textContent = isAuth.user.name;
   }
 });
+if (inputPost) {
+  inputPost.onfocus = () => {
+    window.location.href = '/submit';
+  };
+}
