@@ -237,8 +237,6 @@ main.main-reddit .container {
     display: flex;
     justify-content: space-between;
     line-height: 2;
-    margin-top: 5rem;
-    border-top: 2px double #fff;
     padding-top: 1rem;
 }
 
@@ -329,6 +327,7 @@ border-color: #b0b6de;
     background: #fff;
     padding: 1rem 2rem;
     border-radius: 3px;
+    margin-bottom: 1rem;
 }
 .reddit__public__content__post__header__user {
     display: flex;
@@ -428,5 +427,9 @@ background: #9e9e9e5e;
 .btn-signup:hover{
     background: #222;
     color: #fff;
+}
+
+.hidden{
+    display: none;
 }
 

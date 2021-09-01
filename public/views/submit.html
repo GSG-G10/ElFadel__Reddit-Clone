@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
-    <title>Document</title>
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Submit Reddit</title>
 </head>
+
 <body>
-    <h1>Submit Page</h1>
+    <div class="reddit__public__post">
+        <form action="/submit" method="POST" id="form-post">
+        <div class="svg-wrapper">
+            <img src="https://pics.me.me/thumb_i-edited-the-default-reddit-profile-picture-i-hope-you-68963409.png"
+                id="profile-image">
+        </div>
+        <input type="text" placeholder="add Title" name="title" id="title" />
+        <input type="text" placeholder="Create Post" name="content" id="content" />
+        <input type="checkbox" id="isPrivate"> is Private ?
+        <button><i class="fas fa-link"></i></button>
+        <button><i class="fas fa-image"></i></button>
+        <input type="submit" id="file-input" />
+        </form>
+    </div>
+    
 </body>
+   <script src="../scripts/data/sendPost.js"></script>
+   <script src="../scripts/domSubmit.js"></script>
 </html>

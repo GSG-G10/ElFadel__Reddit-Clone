@@ -1,4 +1,16 @@
 const containerPosts = document.getElementsByClassName('reddit__public__content');
+const helperBar = document.getElementsByClassName('header-wrapper-right');
+const logSign = document.getElementsByClassName('login-signup');
+const inputPost = document.getElementById('post');
+const upvote = document.getElementById('upvote');
+const profileImage = document.getElementById('profile-image');
+const userName = document.getElementById('user-name');
+
+inputPost.onfocus = () => {
+  window.location.href = '/submit';
+};
+
+// card post
 const cardPost = (userImage, userName, time, titlePost, contentPost, numberComments, votes, id) => {
   const postElement = document.createElement('div');
   postElement.setAttribute('id', `${id}`);
@@ -36,6 +48,9 @@ const cardPost = (userImage, userName, time, titlePost, contentPost, numberComme
   comments.innerHTML = `<i class="far fa-comment-alt"></i>${numberComments} Comments`;
   const upvote = document.createElement('span');
   upvote.id = 'upvote';
+  upvote.addEventListener('click', () => {
+    increaseUpvotes(id);
+  });
   upvote.innerHTML = '<i class="fas fa-arrow-up"></i>Upvote';
   const numbervote = document.createElement('span');
   numbervote.id = 'numbervote';
@@ -63,3 +78,14 @@ const cardPost = (userImage, userName, time, titlePost, contentPost, numberComme
   postElement.appendChild(footer);
   containerPosts[0].appendChild(postElement);
 };
+// end create card
+// hide and show element according if  user auth
+checkUser((isAuth) => {
+  if (isAuth) {
+    // remove class hidden
+
+    helperBar[0].classList.remove('hidden');
+    logSign[0].classList.add('hidden');
+    userName.textContent = isAuth.user.name;
+  }
+});
