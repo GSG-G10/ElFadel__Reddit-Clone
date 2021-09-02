@@ -10,7 +10,7 @@ module.exports = (req, res) => {
   const { error } = signUpValidate.validate(req.body);
   if (error) {
     res.cookie('message', error.details[0].message);
-    return res.status(400).redirect('/signUp');
+    return res.redirect('/signUp');
   }
   // hash password
   hashPassword(password, (err, hash) => {
@@ -21,7 +21,7 @@ module.exports = (req, res) => {
       buildToken({ id, name, email }, process.env.SECRET_KEY, (errJWT, token) => {
         if (errJWT) {
           res.cookie('message', 'something wrong please try again');
-          return res.status(400).redirect('/signUp');
+          return res.redirect('/signUp');
         }
         return res
           .cookie('token', token, {
@@ -32,7 +32,7 @@ module.exports = (req, res) => {
     }).catch(() => {
       // database error
       res.cookie('message', 'hmmm This email or your Name is exist please change it ');
-      return res.status(400).redirect('/signUp');
+      return res.redirect('/signUp');
     });
   });
 };

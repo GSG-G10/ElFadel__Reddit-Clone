@@ -34,12 +34,12 @@ module.exports = (req, res) => {
           });
         } else {
           res.cookie('message', 'Wrong password please try again ');
-          res.status(400).redirect('/login');
+          res.redirect('/login');
         }
       });
     } else {
       res.cookie('message', 'email isn\'t exist');
-      res.status(400).redirect('/login');
+      res.redirect('/login');
     }
   })
     .catch(() => {
