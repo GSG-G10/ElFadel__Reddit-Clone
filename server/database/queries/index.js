@@ -6,6 +6,8 @@ const {
   addPost,
   deletePost,
   getAllPost,
+  upVote,
+  downVote,
 } = require('./relatePost');
 const {
   addComment,
@@ -26,4 +28,6 @@ module.exports = {
   updateComment,
   getUser,
   getAllPost,
+  upVote,
+  downVote,
 };
