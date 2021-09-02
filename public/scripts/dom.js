@@ -8,7 +8,7 @@ const userName = document.getElementById('user-name');
 const userProfile = document.getElementById('user-details');
 
 // card post
-const cardPost = (userImage, userName, time, titlePost, contentPost, numberComments, votes, id) => {
+const cardPost = (userImage, name, time, titlePost, contentPost, numberComments, votes, id) => {
   const postElement = document.createElement('div');
   postElement.setAttribute('id', `${id}`);
   postElement.classList.add('reddit__public__content__post');
@@ -24,9 +24,9 @@ const cardPost = (userImage, userName, time, titlePost, contentPost, numberComme
   userInfo.classList.add('reddit__public__content__post__header__user__info');
   const userNameElement = document.createElement('h3');
   const userNameLink = document.createElement('a');//
-  userNameLink.textContent = userName;
-  userNameLink.setAttribute('href', `/user/${userName}`);
-  userNameLink.textContent = userName;
+  userNameLink.textContent = name;
+  userNameLink.setAttribute('href', `/user/${name}`);
+  userNameLink.textContent = name;
   userNameElement.appendChild(userNameLink);
   const userTime = document.createElement('h5');
   userTime.classList.add('time');
@@ -46,7 +46,7 @@ const cardPost = (userImage, userName, time, titlePost, contentPost, numberComme
   const upvote = document.createElement('span');
   upvote.id = 'upvote';
   upvote.addEventListener('click', () => {
-    increaseUpvotes(id);
+    voteUpDown(`/post/upVote/${id}`);
   });
   upvote.innerHTML = '<i class="fas fa-arrow-up"></i>Upvote';
   const numbervote = document.createElement('span');
@@ -54,6 +54,9 @@ const cardPost = (userImage, userName, time, titlePost, contentPost, numberComme
   numbervote.textContent = votes;
   const downvote = document.createElement('span');
   downvote.id = 'downvote';
+  downvote.addEventListener('click', () => {
+    voteUpDown(`/post/downVote/${id}`);
+  });
   downvote.innerHTML = '<i class="fas fa-arrow-down"></i>Downvote';
   const deletePost = document.createElement('span');
   deletePost.id = 'delete';

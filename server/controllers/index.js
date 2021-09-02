@@ -7,6 +7,7 @@ const {
   addComment, deleteComment, updateComment, getComments,
 } = require('./comments');
 const { profilePage, profileInfo, sendDataUser } = require('./user');
+const { upvote, downvote } = require('./relateInteraction');
 
 module.exports = {
   signUpController,
@@ -24,4 +25,6 @@ module.exports = {
   profileInfo,
   getPosts,
   sendDataUser,
+  upvote,
+  downvote,
 };
