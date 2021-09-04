@@ -8,6 +8,7 @@ const {
 } = require('./comments');
 const { profilePage, profileInfo, sendDataUser } = require('./user');
 const { upvote, downvote } = require('./relateInteraction');
+const { clientError, serverError } = require('./errors');
 
 module.exports = {
   signUpController,
@@ -27,4 +28,6 @@ module.exports = {
   sendDataUser,
   upvote,
   downvote,
+  clientError,
+  serverError,
 };
